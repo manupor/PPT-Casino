@@ -9,19 +9,17 @@
 }
 
 :root {
-    --neon-blue: #00d9ff;
-    --neon-blue-glow: rgba(0, 217, 255, 0.6);
-    --dark-blue: #0a1628;
-    --deep-black: #000000;
-    --card-black: #0d1b2a;
-    --accent-cyan: #00f0ff;
-    --text-white: #ffffff;
-    --text-gray: #b0c4de;
     --gold: #FFD700;
+    --dark-gold: #D4AF37;
+    --rich-gold: #FFA500;
+    --deep-black: #0a0a0a;
+    --card-black: #1a1a1a;
     --emerald: #2ecc71;
     --ruby: #e74c3c;
-    --shadow-neon: rgba(0, 217, 255, 0.5);
-    --shadow-dark: rgba(0, 0, 0, 0.9);
+    --platinum: #E5E4E2;
+    --text-light: #f5f5f5;
+    --shadow-gold: rgba(255, 215, 0, 0.3);
+    --shadow-dark: rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -121,7 +119,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -147,38 +147,28 @@ body {
 .badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background: transparent;
-    color: var(--neon-blue);
+    background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+    color: var(--deep-black);
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 50px;
     margin-bottom: 1.5rem;
-    border: 2px solid var(--neon-blue);
-    box-shadow: 0 0 20px var(--shadow-neon), inset 0 0 20px rgba(0, 217, 255, 0.1);
-    animation: neonPulse 2s ease-in-out infinite;
+    box-shadow: 0 5px 25px var(--shadow-gold);
 }
 
-@keyframes neonPulse {
-    0%, 100% { 
-        box-shadow: 0 0 20px var(--shadow-neon), inset 0 0 20px rgba(0, 217, 255, 0.1);
-    }
-    50% { 
-        box-shadow: 0 0 30px var(--shadow-neon), inset 0 0 30px rgba(0, 217, 255, 0.2);
-    }
-}
 
-.gold-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
-.success-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
-.premium-badge { border-color: var(--accent-cyan); color: var(--accent-cyan); }
-.tech-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
-.vip-badge { border-color: var(--accent-cyan); color: var(--accent-cyan); }
-.viral-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
-.expert-badge { border-color: var(--accent-cyan); color: var(--accent-cyan); }
-.investment-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
-.scale-badge { border-color: var(--accent-cyan); color: var(--accent-cyan); }
-.final-badge { border-color: var(--neon-blue); color: var(--neon-blue); }
+.gold-badge { background: linear-gradient(135deg, var(--gold), var(--rich-gold)); }
+.success-badge { background: linear-gradient(135deg, var(--emerald), #27ae60); }
+.premium-badge { background: linear-gradient(135deg, var(--platinum), #bdc3c7); color: #333; }
+.tech-badge { background: linear-gradient(135deg, #3498db, #2980b9); }
+.vip-badge { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.viral-badge { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.expert-badge { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.investment-badge { background: linear-gradient(135deg, var(--emerald), #16a085); }
+.scale-badge { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.final-badge { background: linear-gradient(135deg, var(--gold), var(--rich-gold)); }
 
 /* ========================================
    TYPOGRAPHY
@@ -219,17 +209,20 @@ body {
 }
 
 .highlight {
-    color: var(--neon-blue);
-    text-shadow: 0 0 30px var(--shadow-neon), 0 0 60px rgba(0, 217, 255, 0.3);
+    background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     position: relative;
 }
 
 .subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1.05rem, 2vw, 1.5rem);
     font-weight: 300;
-    color: var(--platinum);
+    color: var(--text-light);
     margin-bottom: 2rem;
     max-width: 700px;
+    line-height: 1.6;
 }
 
 .intro-description {
@@ -277,22 +270,20 @@ body {
     padding: 1.2rem 3rem;
     font-size: 1.1rem;
     font-weight: 700;
-    background: transparent;
-    color: var(--neon-blue);
-    border: 2px solid var(--neon-blue);
+    background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+    color: var(--deep-black);
+    border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px var(--shadow-neon), inset 0 0 20px rgba(0, 217, 255, 0.1);
+    box-shadow: 0 10px 40px var(--shadow-gold);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .cta-primary:hover {
     transform: translateY(-3px);
-    background: var(--neon-blue);
-    color: #000;
-    box-shadow: 0 0 40px var(--shadow-neon), 0 0 80px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 15px 60px var(--shadow-gold);
 }
 
 .cta-primary.large {
@@ -312,10 +303,10 @@ body {
 }
 
 .feature-item {
-    background: rgba(13, 27, 42, 0.4);
+    background: rgba(26, 26, 26, 0.6);
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(0, 217, 255, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     opacity: 0;
@@ -339,8 +330,8 @@ body {
 
 .feature-item:hover {
     transform: translateY(-10px);
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 30px var(--shadow-neon), 0 10px 40px rgba(0, 217, 255, 0.3);
+    border-color: var(--gold);
+    box-shadow: 0 10px 40px var(--shadow-gold);
 }
 
 .feature-icon {
@@ -349,15 +340,15 @@ body {
 }
 
 .feature-item h3 {
-    color: var(--neon-blue);
+    color: var(--gold);
     font-size: 1.5rem;
     margin-bottom: 0.8rem;
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
 .feature-item p {
-    color: var(--text-gray);
-    line-height: 1.6;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
 /* ========================================
@@ -380,8 +371,10 @@ body {
     font-family: 'Cinzel', serif;
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 900;
-    color: var(--neon-blue);
-    text-shadow: 0 0 30px var(--shadow-neon), 0 0 60px rgba(0, 217, 255, 0.4);
+    background: linear-gradient(135deg, var(--gold), var(--rich-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 0.5rem;
 }
 
@@ -404,8 +397,8 @@ body {
     font-weight: 600;
     text-align: center;
     margin-top: 2rem;
-    color: var(--neon-blue);
-    text-shadow: 0 0 20px var(--shadow-neon);
+    color: var(--gold);
+    text-shadow: 0 2px 20px var(--shadow-gold);
 }
 
 /* ========================================
@@ -413,20 +406,18 @@ body {
    ======================================== */
 
 .info-box {
-    background: rgba(0, 217, 255, 0.05);
-    border-left: 4px solid var(--neon-blue);
+    background: rgba(255, 215, 0, 0.08);
+    border-left: 4px solid var(--gold);
     padding: 2rem;
     border-radius: 15px;
     margin-top: 2.5rem;
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.1);
 }
 
 .info-box h3 {
-    color: var(--neon-blue);
+    color: var(--gold);
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     margin-bottom: 1rem;
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
 .info-box p {
@@ -443,9 +434,9 @@ body {
 .benefit-list li {
     padding: 0.7rem 0;
     font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    color: var(--text-gray);
-    line-height: 1.6;
-    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+    color: var(--text-light);
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .benefit-list li:last-child {
@@ -881,14 +872,13 @@ body {
 .nav-counter {
     font-family: 'Cinzel', serif;
     font-size: 1.2rem;
-    color: var(--neon-blue);
+    color: var(--gold);
     font-weight: 700;
-    background: rgba(13, 27, 42, 0.8);
+    background: rgba(26, 26, 26, 0.8);
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    border: 1px solid rgba(0, 217, 255, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.3);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
 }
 
 .separator {
@@ -900,9 +890,9 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(13, 27, 42, 0.8);
-    border: 2px solid var(--neon-blue);
-    color: var(--neon-blue);
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: var(--gold);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -913,14 +903,13 @@ body {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     z-index: 100;
-    box-shadow: 0 0 15px var(--shadow-neon);
 }
 
 .nav-arrow:hover {
-    background: var(--neon-blue);
-    color: #000;
+    background: var(--gold);
+    color: var(--deep-black);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 30px var(--shadow-neon), 0 0 60px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 5px 30px var(--shadow-gold);
 }
 
 .nav-arrow.prev {
@@ -943,7 +932,8 @@ body {
     .slide-content {
         padding: 2rem 1.25rem;
         align-items: flex-start;
-        padding-top: 4rem;
+        padding-top: 5rem;
+        padding-bottom: 10rem;
     }
 
     .content-wrapper {
@@ -953,19 +943,20 @@ body {
 
     .main-title {
         font-size: 2rem;
-        margin-bottom: 1rem;
-        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
     }
 
     .slide-title {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.3;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.05rem;
         margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
 
     .intro-description {
@@ -978,8 +969,8 @@ body {
     }
 
     .section-intro {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.7;
         margin-bottom: 1.5rem;
     }
 
@@ -1043,19 +1034,22 @@ body {
     .payment-card,
     .scale-card {
         padding: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .feature-item h3,
     .payment-card h3,
     .scale-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.6rem;
     }
 
     .feature-item p,
     .marketing-card p,
     .payment-card p,
     .scale-card p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     /* Stats */
@@ -1075,10 +1069,10 @@ body {
 
     /* Navigation Arrows */
     .nav-arrow {
-        width: 45px;
-        height: 45px;
+        width: 48px;
+        height: 48px;
         top: auto;
-        bottom: 5rem;
+        bottom: 6rem;
         transform: translateY(0);
     }
 
@@ -1097,13 +1091,14 @@ body {
 
     /* Bottom Navigation */
     .nav-controls {
-        bottom: 1.5rem;
+        bottom: 2rem;
         gap: 1rem;
+        z-index: 150;
     }
 
     .nav-counter {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
     }
 
     .nav-dots {
@@ -1259,20 +1254,25 @@ body {
 @media (max-width: 480px) {
     .slide-content {
         padding: 1.5rem 1rem;
-        padding-top: 3.5rem;
+        padding-top: 4.5rem;
+        padding-bottom: 11rem;
     }
 
     .main-title {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
     }
 
     .slide-title {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
         margin-bottom: 1.25rem;
+        line-height: 1.3;
     }
 
     .subtitle {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .badge {
@@ -1304,18 +1304,18 @@ body {
     }
 
     .nav-arrow {
-        width: 40px;
-        height: 40px;
-        bottom: 4.5rem;
+        width: 44px;
+        height: 44px;
+        bottom: 5.5rem;
     }
 
     .nav-controls {
-        bottom: 1rem;
+        bottom: 1.5rem;
     }
 
     .cta-primary {
-        font-size: 0.85rem;
-        padding: 0.9rem 1.8rem;
+        font-size: 0.9rem;
+        padding: 1rem 2rem;
     }
 
     .cta-primary.large {
