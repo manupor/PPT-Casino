@@ -92,6 +92,11 @@ function changeSlide(newSlide) {
         updateSlideCounter();
         updateNavigationDots();
         
+        // Update swipe hint visibility
+        if (window.updateSwipeHint) {
+            window.updateSwipeHint();
+        }
+        
         // Reset parallax
         resetParallax(newSlideElement);
         
@@ -253,6 +258,24 @@ function addTouchNavigation() {
     const slider = document.querySelector('.slider-container');
     const swipeHint = document.querySelector('.swipe-hint');
     
+    // Function to show/hide swipe hint based on current slide
+    function updateSwipeHint() {
+        if (swipeHint) {
+            if (currentSlide === 1 && !hasSwipedOnce) {
+                swipeHint.style.display = 'block';
+                swipeHint.style.opacity = '1';
+            } else {
+                swipeHint.style.opacity = '0';
+                setTimeout(() => {
+                    swipeHint.style.display = 'none';
+                }, 500);
+            }
+        }
+    }
+    
+    // Show hint on first slide initially
+    updateSwipeHint();
+    
     slider.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
@@ -281,18 +304,16 @@ function addTouchNavigation() {
                     nextSlide();
                 }
                 
-                // Hide swipe hint after first swipe
-                if (!hasSwipedOnce && swipeHint) {
-                    hasSwipedOnce = true;
-                    swipeHint.style.opacity = '0';
-                    setTimeout(() => {
-                        swipeHint.style.display = 'none';
-                    }, 500);
-                }
+                // Mark as swiped and update hint visibility
+                hasSwipedOnce = true;
+                updateSwipeHint();
             }
         }
         // If it's a vertical swipe, let the browser handle scrolling
     }
+    
+    // Expose updateSwipeHint globally so changeSlide can call it
+    window.updateSwipeHint = updateSwipeHint;
 }
 
 /* ========================================
