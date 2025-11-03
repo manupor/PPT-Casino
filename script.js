@@ -315,62 +315,27 @@ function resetParallax(slideElement) {
 }
 
 /* ========================================
-   SCROLL WHEEL NAVIGATION
+   SCROLL WHEEL NAVIGATION - DISABLED
    ======================================== */
 
-let wheelTimeout;
-document.addEventListener('wheel', (e) => {
-    if (isAnimating) return;
-    
-    clearTimeout(wheelTimeout);
-    wheelTimeout = setTimeout(() => {
-        if (e.deltaY > 0) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
-    }, 50);
-}, { passive: true });
+// Scroll wheel navigation disabled to allow vertical scrolling within slides
+// Users can now scroll to read content without changing slides
+// To change slides, users must:
+// - Click arrows (desktop)
+// - Swipe (mobile)
+// - Use keyboard navigation
+// - Click navigation dots
 
 /* ========================================
-   AUTO-PLAY (OPTIONAL)
+   AUTO-PLAY DISABLED
    ======================================== */
 
-let autoPlayInterval;
-let autoPlayEnabled = false;
-
-function startAutoPlay(intervalMs = 5000) {
-    if (autoPlayEnabled) return;
-    
-    autoPlayEnabled = true;
-    autoPlayInterval = setInterval(() => {
-        if (currentSlide < totalSlides) {
-            nextSlide();
-        } else {
-            goToSlide(1);
-        }
-    }, intervalMs);
-}
-
-function stopAutoPlay() {
-    autoPlayEnabled = false;
-    clearInterval(autoPlayInterval);
-}
-
-// Stop autoplay on user interaction
-document.addEventListener('click', stopAutoPlay, { once: true });
-document.addEventListener('keydown', stopAutoPlay, { once: true });
-document.addEventListener('touchstart', stopAutoPlay, { once: true });
-
-/* ========================================
-   VISIBILITY CHANGE (Pause when tab hidden)
-   ======================================== */
-
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        stopAutoPlay();
-    }
-});
+// Auto-play is intentionally disabled
+// Slides only change by user interaction:
+// - Click arrows (desktop)
+// - Swipe (mobile)
+// - Keyboard navigation
+// - Click navigation dots
 
 /* ========================================
    RESIZE HANDLER
