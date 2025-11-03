@@ -3,7 +3,7 @@
    ======================================== */
 
 let currentSlide = 1;
-const totalSlides = 13;
+const totalSlides = 12;
 let isAnimating = false;
 
 // Initialize on page load
