@@ -138,21 +138,22 @@ function addDotStyles() {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: rgba(255, 215, 0, 0.3);
-            border: 2px solid rgba(255, 215, 0, 0.5);
+            background: rgba(0, 217, 255, 0.2);
+            border: 2px solid rgba(0, 217, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .nav-dot:hover {
-            background: rgba(255, 215, 0, 0.6);
+            background: rgba(0, 217, 255, 0.5);
             transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
         }
         
         .nav-dot.active {
-            background: var(--gold);
-            border-color: var(--gold);
-            box-shadow: 0 0 20px var(--shadow-gold);
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.6), 0 0 40px rgba(0, 217, 255, 0.3);
             transform: scale(1.3);
         }
     `;
