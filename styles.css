@@ -27,7 +27,10 @@ body {
     background: var(--deep-black);
     color: white;
     height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ========================================
@@ -37,6 +40,7 @@ body {
 .slider-container {
     width: 100%;
     height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
     position: relative;
     overflow: hidden;
 }
@@ -115,6 +119,9 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .content-wrapper {
@@ -1211,6 +1218,227 @@ body {
     }
 }
 
+/* Mobile Landscape */
+@media (max-width: 926px) and (orientation: landscape) {
+    .slide-content {
+        padding: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 6rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .content-wrapper {
+        max-height: calc(100vh - 8rem);
+        overflow-y: auto;
+        padding-right: 0.5rem;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .slide-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .badge {
+        font-size: 0.55rem;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-grid,
+    .marketing-grid,
+    .payment-features,
+    .scale-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .feature-item,
+    .marketing-card,
+    .payment-card,
+    .scale-card {
+        padding: 1rem;
+    }
+
+    .feature-item h3,
+    .payment-card h3,
+    .scale-card h3 {
+        font-size: 1rem;
+    }
+
+    .feature-item p,
+    .marketing-card p,
+    .payment-card p,
+    .scale-card p {
+        font-size: 0.8rem;
+    }
+
+    .stats-container {
+        flex-direction: row;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+        bottom: 1rem;
+    }
+
+    .nav-controls {
+        bottom: 0.5rem;
+    }
+
+    .nav-counter {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .cta-primary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .infrastructure-list,
+    .expertise-list {
+        gap: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    .infra-item,
+    .expertise-item {
+        padding: 1rem;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .infra-item h4,
+    .exp-content h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .infra-item p,
+    .exp-content p {
+        font-size: 0.8rem;
+    }
+
+    .comparison-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .comparison-item {
+        padding: 1rem;
+    }
+
+    .comparison-item h3 {
+        font-size: 1rem;
+    }
+
+    .comparison-item p {
+        font-size: 0.8rem;
+    }
+
+    .investment-box {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .big-text {
+        font-size: 1.2rem;
+    }
+
+    .investment-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .benefit {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+
+    .highlight-text {
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+
+    .final-statement {
+        margin: 1rem 0;
+        gap: 0.6rem;
+    }
+
+    .statement-line {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+
+    .final-tagline {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+
+    .tech-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* iPhone SE and small devices */
+@media (max-width: 390px) {
+    .slide-content {
+        padding: 1.5rem 0.9rem;
+        padding-top: 3.5rem;
+    }
+
+    .main-title {
+        font-size: 1.65rem;
+    }
+
+    .slide-title {
+        font-size: 1.4rem;
+    }
+
+    .badge {
+        font-size: 0.58rem;
+    }
+}
+
+/* Large mobile devices (iPhone Pro Max, etc) */
+@media (min-width: 390px) and (max-width: 480px) {
+    .slide-content {
+        padding: 1.75rem 1.1rem;
+        padding-top: 3.75rem;
+    }
+
+    .main-title {
+        font-size: 1.85rem;
+    }
+
+    .slide-title {
+        font-size: 1.6rem;
+    }
+}
+
 /* ========================================
    ANIMATIONS
    ======================================== */
@@ -1240,4 +1468,79 @@ body {
 /* Smooth transitions for all interactive elements */
 button, .feature-item, .marketing-card, .payment-card, .scale-card {
     will-change: transform;
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* Ensure touch targets are at least 44x44px */
+@media (max-width: 768px) {
+    button, .nav-arrow, .nav-dot {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Prevent text selection on buttons */
+    button, .nav-arrow {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Smooth scrolling in content */
+    .slide-content {
+        scroll-behavior: smooth;
+    }
+
+    /* Improve readability on small screens */
+    .content-wrapper {
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Prevent horizontal overflow */
+    .slide {
+        overflow-x: hidden;
+    }
+
+    /* Fix iOS Safari bottom bar issue */
+    @supports (-webkit-touch-callout: none) {
+        .slider-container {
+            height: -webkit-fill-available;
+        }
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+    .slide-content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .nav-controls {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Prevent zoom on double tap */
+@media (max-width: 768px) {
+    * {
+        touch-action: manipulation;
+    }
+}
+
+/* Optimize performance on mobile */
+@media (max-width: 768px) {
+    .parallax-bg {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    .slide {
+        transform: translate3d(0, 0, 0);
+    }
 }
