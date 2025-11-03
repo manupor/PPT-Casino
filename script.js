@@ -223,8 +223,10 @@ function addTouchNavigation() {
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
+    let hasSwipedOnce = false;
     
     const slider = document.querySelector('.slider-container');
+    const swipeHint = document.querySelector('.swipe-hint');
     
     slider.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
@@ -238,25 +240,33 @@ function addTouchNavigation() {
     }, { passive: true });
     
     function handleSwipe() {
-        const swipeThreshold = 50;
+        const swipeThreshold = 75; // Increased threshold for better control
         const horizontalDiff = touchEndX - touchStartX;
         const verticalDiff = touchEndY - touchStartY;
         
-        // Only trigger if horizontal swipe is dominant
-        if (Math.abs(horizontalDiff) > Math.abs(verticalDiff)) {
-            if (horizontalDiff > swipeThreshold) {
-                prevSlide();
-            } else if (horizontalDiff < -swipeThreshold) {
-                nextSlide();
-            }
-        } else {
-            // Vertical swipe
-            if (verticalDiff < -swipeThreshold) {
-                nextSlide();
-            } else if (verticalDiff > swipeThreshold) {
-                prevSlide();
+        // Check if it's primarily a horizontal swipe
+        if (Math.abs(horizontalDiff) > Math.abs(verticalDiff) * 1.5) {
+            // Horizontal swipe detected
+            if (Math.abs(horizontalDiff) > swipeThreshold) {
+                if (horizontalDiff > 0) {
+                    // Swipe right - go to previous slide
+                    prevSlide();
+                } else {
+                    // Swipe left - go to next slide
+                    nextSlide();
+                }
+                
+                // Hide swipe hint after first swipe
+                if (!hasSwipedOnce && swipeHint) {
+                    hasSwipedOnce = true;
+                    swipeHint.style.opacity = '0';
+                    setTimeout(() => {
+                        swipeHint.style.display = 'none';
+                    }, 500);
+                }
             }
         }
+        // If it's a vertical swipe, let the browser handle scrolling
     }
 }
 
