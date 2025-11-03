@@ -161,28 +161,42 @@ function addDotStyles() {
             transform: scale(1.3);
         }
 
-        /* Mobile optimization */
+        /* Mobile optimization - smaller dots like points */
         @media (max-width: 768px) {
             .nav-dot {
-                width: 9px;
-                height: 9px;
-                border: 1.5px solid rgba(255, 215, 0, 0.5);
+                width: 6px;
+                height: 6px;
+                border: 1px solid rgba(255, 215, 0, 0.6);
             }
             
             .nav-dot.active {
-                transform: scale(1.2);
+                transform: scale(1.3);
+                border-width: 1px;
             }
         }
 
         @media (max-width: 480px) {
             .nav-dot {
-                width: 8px;
-                height: 8px;
-                border: 1.5px solid rgba(255, 215, 0, 0.5);
+                width: 5px;
+                height: 5px;
+                border: 1px solid rgba(255, 215, 0, 0.6);
             }
             
             .nav-dot.active {
-                transform: scale(1.15);
+                transform: scale(1.4);
+                border-width: 1px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .nav-dot {
+                width: 4px;
+                height: 4px;
+                border: 1px solid rgba(255, 215, 0, 0.6);
+            }
+            
+            .nav-dot.active {
+                transform: scale(1.5);
             }
         }
     `;
