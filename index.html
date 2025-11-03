@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Casino LATAM - Inversión Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-controls">
+        <div class="nav-dots"></div>
+        <div class="nav-counter">
+            <span class="current-slide">01</span>
+            <span class="separator">/</span>
+            <span class="total-slides">12</span>
+        </div>
+    </nav>
+
+    <!-- Slider Container -->
+    <div class="slider-container">
+        
+        <!-- Slide 1: Portada -->
+        <section class="slide active" data-slide="1">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge gold-badge">OPORTUNIDAD EXCLUSIVA</div>
+                    <h1 class="main-title">
+                        <span class="title-line">PROYECTO</span>
+                        <span class="title-line highlight">CASINO LATAM</span>
+                    </h1>
+                    <p class="subtitle">La próxima gran marca de entretenimiento digital para América Latina</p>
+                    <div class="cta-group">
+                        <button class="cta-primary" onclick="nextSlide()">Descubrir Oportunidad</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 2: Visión -->
+        <section class="slide" data-slide="2">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1563472039-7d321d65e636?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge">VISIÓN</div>
+                    <h2 class="slide-title">100% Identidad Latina</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Marca Moderna</h3>
+                            <p>Casino online con ADN latinoamericano auténtico</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏆</div>
+                            <h3>Infraestructura Propia</h3>
+                            <p>Sin dependencias, control total de la operación</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💎</div>
+                            <h3>Experiencia Comprobada</h3>
+                            <p>Equipo experto en iGaming regional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 3: No Partimos desde Cero -->
+        <section class="slide" data-slide="3">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge success-badge">OPERANDO AHORA</div>
+                    <h2 class="slide-title">Ya Estamos en el Mercado</h2>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Marcas Activas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Conocimiento Local</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">LATAM</div>
+                            <div class="stat-label">Cobertura Total</div>
+                        </div>
+                    </div>
+                    <p class="highlight-text">No es una idea, es expansión de un modelo probado</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 4: Modelo Stake -->
+        <section class="slide" data-slide="4">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge premium-badge">MODELO DE ÉXITO</div>
+                    <h2 class="slide-title">Inspirados en Stake</h2>
+                    <div class="comparison-box">
+                        <div class="comparison-item">
+                            <h3>+ Enfoque Latino</h3>
+                            <p>Voz, imagen y comunidad 100% regional</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>+ Métodos Locales</h3>
+                            <p>Pagos adaptados a cada mercado LATAM</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>+ Cercanía Cultural</h3>
+                            <p>Contenido que conecta con el jugador latino</p>
+                        </div>
+                    </div>
+                    <p class="quote">"El modelo global, con identidad regional"</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 5: RTG Proveedor -->
+        <section class="slide" data-slide="5">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1579666443317-886aba9e5b0e?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge tech-badge">TECNOLOGÍA PREMIUM</div>
+                    <h2 class="slide-title">Realtime Gaming (RTG)</h2>
+                    <div class="tech-features">
+                        <div class="tech-item">
+                            <div class="tech-number">25+</div>
+                            <p>Años de trayectoria internacional</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">✓</div>
+                            <p>Estabilidad y transparencia comprobada</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">✓</div>
+                            <p>Catálogo de juegos premium</p>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">✓</div>
+                            <p>Rendimiento excepcional web/móvil</p>
+                        </div>
+                    </div>
+                    <p class="highlight-text">Herramienta clave para adquisición masiva</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 6: Infraestructura -->
+        <section class="slide" data-slide="6">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge success-badge">OPERATIVA</div>
+                    <h2 class="slide-title">Infraestructura Completa</h2>
+                    <div class="infrastructure-list">
+                        <div class="infra-item">
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <h4>Procesadores Activos</h4>
+                                <p>Pagos locales y regionales funcionando</p>
+                            </div>
+                        </div>
+                        <div class="infra-item">
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <h4>Múltiples Métodos</h4>
+                                <p>Tarjetas, transferencias y criptomonedas</p>
+                            </div>
+                        </div>
+                        <div class="infra-item">
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <h4>Sin Dependencias</h4>
+                                <p>Operación inmediata, control total</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 7: Pagos Rápidos -->
+        <section class="slide" data-slide="7">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge vip-badge">EXPERIENCIA VIP</div>
+                    <h2 class="slide-title">Pagos Instantáneos</h2>
+                    <div class="payment-features">
+                        <div class="payment-card">
+                            <div class="payment-icon">⚡</div>
+                            <h3>Retiros Mismo Día</h3>
+                            <p>Procesamiento express para usuarios VIP</p>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">🔒</div>
+                            <h3>100% Seguro</h3>
+                            <p>Encriptación y protección garantizada</p>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">🌟</div>
+                            <h3>Confiable</h3>
+                            <p>Experiencia fluida y sin complicaciones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 8: Marketing Viral -->
+        <section class="slide" data-slide="8">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=2006');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge viral-badge">ESTRATEGIA VIRAL</div>
+                    <h2 class="slide-title">Marketing de Alto Impacto</h2>
+                    <div class="marketing-grid">
+                        <div class="marketing-card">
+                            <h4>🎬 Influencers</h4>
+                            <p>Creadores con millones de seguidores</p>
+                        </div>
+                        <div class="marketing-card">
+                            <h4>🥊 Deportistas</h4>
+                            <p>Peleadores y atletas reconocidos</p>
+                        </div>
+                        <div class="marketing-card">
+                            <h4>📱 Redes Sociales</h4>
+                            <p>IG, TikTok, YouTube, Twitch</p>
+                        </div>
+                        <div class="marketing-card">
+                            <h4>💎 Luxury Content</h4>
+                            <p>Contenido aspiracional premium</p>
+                        </div>
+                    </div>
+                    <p class="highlight-text">Presencia dominante en plataformas digitales</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 9: Experiencia Regional -->
+        <section class="slide" data-slide="9">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge expert-badge">EQUIPO EXPERTO</div>
+                    <h2 class="slide-title">Años en el Mercado</h2>
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <div class="exp-number">01</div>
+                            <div class="exp-content">
+                                <h4>Regulación y Compliance</h4>
+                                <p>Procesos bancarios y legales de cada país</p>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="exp-number">02</div>
+                            <div class="exp-content">
+                                <h4>Adquisición y Retención</h4>
+                                <p>Estrategias probadas de crecimiento</p>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="exp-number">03</div>
+                            <div class="exp-content">
+                                <h4>Network Establecido</h4>
+                                <p>Afiliados, proveedores y socios clave</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 10: Propuesta Inversión -->
+        <section class="slide" data-slide="10">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge investment-badge">OPORTUNIDAD DE INVERSIÓN</div>
+                    <h2 class="slide-title">Buscamos Aliados Estratégicos</h2>
+                    <div class="investment-box">
+                        <div class="investment-point">
+                            <h3>No es una idea</h3>
+                            <p class="big-text">Es un proyecto en expansión</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="investment-benefits">
+                            <div class="benefit">✓ Base técnica operativa</div>
+                            <div class="benefit">✓ Infraestructura activa</div>
+                            <div class="benefit">✓ Estrategia definida</div>
+                            <div class="benefit">✓ Equipo experimentado</div>
+                        </div>
+                    </div>
+                    <p class="cta-text">Únete a la próxima gran marca de casino en LATAM</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 11: Escalabilidad -->
+        <section class="slide" data-slide="11">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper">
+                    <div class="badge scale-badge">CRECIMIENTO ACELERADO</div>
+                    <h2 class="slide-title">Modelo Probado, Listo para Escalar</h2>
+                    <div class="scale-features">
+                        <div class="scale-card">
+                            <div class="scale-icon">🚀</div>
+                            <h3>Branding de Impacto</h3>
+                            <p>Identidad visual premium que conquista</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon">📈</div>
+                            <h3>Posicionamiento Viral</h3>
+                            <p>Contenido diseñado para viralización</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon">💰</div>
+                            <h3>ROI Comprobado</h3>
+                            <p>Métricas reales de marcas operando</p>
+                        </div>
+                    </div>
+                    <p class="highlight-text">La infraestructura está. Solo falta escalar.</p>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+        <!-- Slide 12: Conclusión -->
+        <section class="slide" data-slide="12">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070');"></div>
+            <div class="slide-content">
+                <div class="content-wrapper final-slide">
+                    <div class="badge final-badge">EL MOMENTO ES AHORA</div>
+                    <h2 class="slide-title">La Próxima Gran Marca</h2>
+                    <div class="final-statement">
+                        <p class="statement-line">✓ Infraestructura activa</p>
+                        <p class="statement-line">✓ Proveedor líder RTG</p>
+                        <p class="statement-line">✓ Equipo con trayectoria</p>
+                        <p class="statement-line">✓ Estrategia inspirada en Stake</p>
+                    </div>
+                    <h3 class="final-tagline">
+                        Moderna · Confiable · Regional · Global
+                    </h3>
+                    <div class="final-cta">
+                        <p class="cta-title">¿Listo para formar parte?</p>
+                        <button class="cta-primary large">Unirse al Proyecto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-overlay"></div>
+        </section>
+
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow prev" onclick="prevSlide()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button class="nav-arrow next" onclick="nextSlide()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
