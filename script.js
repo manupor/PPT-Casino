@@ -155,6 +155,31 @@ function addDotStyles() {
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
             transform: scale(1.3);
         }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .nav-dot {
+                width: 9px;
+                height: 9px;
+                border: 1.5px solid rgba(255, 215, 0, 0.5);
+            }
+            
+            .nav-dot.active {
+                transform: scale(1.2);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+                border: 1.5px solid rgba(255, 215, 0, 0.5);
+            }
+            
+            .nav-dot.active {
+                transform: scale(1.15);
+            }
+        }
     `;
     document.head.appendChild(style);
 }
