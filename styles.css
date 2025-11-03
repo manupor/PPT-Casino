@@ -222,8 +222,28 @@ body {
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
     color: var(--platinum);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     max-width: 700px;
+}
+
+.intro-description {
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+}
+
+.intro-description p {
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-intro {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.7;
+    color: var(--platinum);
+    margin-bottom: 2rem;
+    max-width: 900px;
+    font-weight: 300;
 }
 
 .slide-title {
@@ -363,6 +383,13 @@ body {
     color: var(--platinum);
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
 }
 
 .highlight-text {
@@ -372,6 +399,48 @@ body {
     margin-top: 2rem;
     color: var(--gold);
     text-shadow: 0 2px 20px var(--shadow-gold);
+}
+
+/* ========================================
+   INFO BOX & BENEFIT LIST
+   ======================================== */
+
+.info-box {
+    background: rgba(255, 215, 0, 0.08);
+    border-left: 4px solid var(--gold);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2.5rem;
+}
+
+.info-box h3 {
+    color: var(--gold);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-box p {
+    color: white;
+    line-height: 1.8;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-list li {
+    padding: 0.7rem 0;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    color: white;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.benefit-list li:last-child {
+    border-bottom: none;
 }
 
 /* ========================================
@@ -447,9 +516,37 @@ body {
     margin-bottom: 1rem;
 }
 
+.tech-item h4 {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
 .tech-item p {
     color: white;
     line-height: 1.6;
+}
+
+/* ========================================
+   DETAIL TAGS
+   ======================================== */
+
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: rgba(46, 204, 113, 0.2);
+    color: var(--emerald);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(46, 204, 113, 0.3);
 }
 
 /* ========================================
@@ -857,13 +954,65 @@ body {
 
     .subtitle {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-description {
         margin-bottom: 2rem;
+    }
+
+    .intro-description p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
     }
 
     .badge {
         font-size: 0.65rem;
         padding: 0.4rem 1rem;
         margin-bottom: 1rem;
+    }
+
+    /* Info Box Mobile */
+    .info-box {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .info-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .benefit-list li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+
+    /* Tags Mobile */
+    .detail-tags {
+        gap: 0.4rem;
+        margin-top: 0.8rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    /* Tech Items Mobile */
+    .tech-item h4 {
+        font-size: 1rem;
     }
 
     /* Feature Grids */
